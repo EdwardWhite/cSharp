@@ -14,27 +14,32 @@ namespace ConsoleApplication1
         private String filter;
         private String CleanedFilter;
 
+        //constructor 
         public Filter(String n)
         {
             filter = n;
+            cleaning();
+            //runs cleaning method for encasulation 
+            // runs from constructor as it is the only function of class
         }
 
+        // only public method for class
         public String Cleaned()
         {
-            cleaning();
             return CleanedFilter;
         }
 
         private void cleaning()
         {
+            //string builder for easy appending 
             var sb = new StringBuilder();
 
+            // char for sanitising input string for all symbols 
             foreach (char c in filter)
             {
                 if (char.IsLetterOrDigit(c))
                     sb.Append(c);
             }
-            
             CleanedFilter = sb.ToString();
         }
 

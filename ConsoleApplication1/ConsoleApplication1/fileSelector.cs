@@ -10,47 +10,52 @@ namespace ConsoleApplication1
 {
     class fileSelector
     {
+        //file type is started as * incase types is null so it will display all file types
         private String fileType ="*";
         private String strfilename ="";
+        private bool test;
 
+
+       private string[] arrAllFiles;
         public fileSelector(String types)
         {
-          fileType = types;
+            //takes sanitised input for filtered browsing 
+            fileType = types;
+            //running from constructor for encapsulation
+            Fileselector();
+            test = Array.Exists(arrAllFiles, element => element == null);
          }
      
         public String filepath()
         {
-            return filelocation();
+            return strfilename; 
         }
 
-        public void fileSelectors()
+        public Array filepath(bool a)
         {
-            Fileselector();
+            return arrAllFiles;
         }
 
-
-
-
-
-        private String filelocation()
+        public bool checkArray()
         {
-            return strfilename;
+            return test;
         }
 
-
+     
         private void Fileselector()
         {
            
-            OpenFileDialog choofdlog = new OpenFileDialog();
-            choofdlog.Filter = "All Files (*.*)|*."+fileType;
-            choofdlog.FilterIndex = 1;
-            choofdlog.Multiselect = true;
+            OpenFileDialog log = new OpenFileDialog();
+            //using file type to limit files shown 
+            log.Filter = "All Files (*.*)|*."+fileType;
+            log.FilterIndex = 1;
+            log.Multiselect = true;
 
-            if (choofdlog.ShowDialog() == DialogResult.OK)
+            if (log.ShowDialog() == DialogResult.OK)
             {
-                string sFileName = choofdlog.FileName;
-                string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true         
-                strfilename = choofdlog.InitialDirectory + choofdlog.FileName;
+                string sFileName = log.FileName;
+               arrAllFiles = log.FileNames; //used when Multiselect = true         
+                strfilename = log.InitialDirectory + log.FileName;
             }
         }
 

@@ -22,6 +22,7 @@ namespace ConsoleApplication1
                 foreach (String c in file.filepath(file.checkArray()))
                 {
                     Console.WriteLine(c);
+                    //comment
                 }
             }
             Console.ReadLine();

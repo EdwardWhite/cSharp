@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
@@ -13,18 +9,44 @@ namespace ConsoleApplication1
         {
             Filter a = new Filter(Console.ReadLine());
             fileSelector file = new fileSelector(a.Cleaned());
-            if (file.checkArray().Equals(true))
+
+            bool test = file.checkArray();
+
+            test == true ? Console.WriteLine(file.filepath()) :;
+                
+                
+                
+                file.filepath(file.checkArray()).to
+
+                
+                
+                
+                .ForEach( i => Console.WriteLine(i));
+
+
+            file.filepath(file.checkArray()).ToList().ForEach(n => Console.WriteLine(n));
+            foreach (String c in file.filepath(file.checkArray()))
             {
-                Console.WriteLine(file.filepath());
+                Console.WriteLine(c);
             }
-            else
+
+            switch (test)
             {
-                foreach (String c in file.filepath(file.checkArray()))
-                {
-                    Console.WriteLine(c);
-                    //comment
-                }
+                case true:
+                    Console.WriteLine(file.filepath());
+                    break;
+                case false:
+                    foreach (String c in file.filepath(file.checkArray()))
+                    {
+                        Console.WriteLine(c);
+                    }
+                    break;
             }
+
+         
+
+
+
             Console.ReadLine();
         }
     }

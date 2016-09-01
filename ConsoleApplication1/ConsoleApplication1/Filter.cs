@@ -39,6 +39,7 @@ namespace ConsoleApplication1
             {
                 if (char.IsLetterOrDigit(c))
                     sb.Append(c);
+                Console.WriteLine(sb);
             }
             CleanedFilter = sb.ToString();
         }

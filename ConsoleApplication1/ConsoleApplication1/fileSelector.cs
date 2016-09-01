@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ConsoleApplication1
 {
     class fileSelector
     {
+        //file extensions
         //file type is started as * incase types is null so it will display all file types
         private String fileType ="*";
         private String strfilename ="";
+            
+       
         private bool test;
 
 

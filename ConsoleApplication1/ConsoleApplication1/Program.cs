@@ -12,19 +12,7 @@ namespace ConsoleApplication1
 
             bool test = file.checkArray();
 
-            test == true ? Console.WriteLine(file.filepath()) :;
-                
-                
-                
-                file.filepath(file.checkArray()).to
 
-                
-                
-                
-                .ForEach( i => Console.WriteLine(i));
-
-
-            file.filepath(file.checkArray()).ToList().ForEach(n => Console.WriteLine(n));
             foreach (String c in file.filepath(file.checkArray()))
             {
                 Console.WriteLine(c);

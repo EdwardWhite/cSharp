@@ -16,4 +16,31 @@ namespace ClassLibrary1
         public String CountryCode { get; set; }
     }
 
+
+    public class user
+    {
+        public String userName { get; set; }
+        public String passWordUnhashed { get; set; }
+        public String passWordHashed { get; set; }
+        public String commonName { get; set; }
+        public String formalName { get; set; }
+        public String telephoneNumber { get; set; }
+        public String locationID { get; set; }
+
+    }
+
+    public class Location
+    {
+
+        public String id { get; set; }
+
+        public String doorNumber { get; set; }
+        public String firstLine { get; set; }
+        public String secondLine { get; set; }
+        public String postCode { get; set; }
+
+    }
+
+
+
 }

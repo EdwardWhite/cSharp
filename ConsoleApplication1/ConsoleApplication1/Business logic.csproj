@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary.csproj">
       <Project>{675b9c22-2e25-47cc-89ce-acee032d074f}</Project>
-      <Name>ClassLibrary1</Name>
+      <Name>ClassLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{8bfd78c6-63bd-42c2-af3c-34780768fe03}</Project>

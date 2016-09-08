@@ -19,8 +19,8 @@ namespace ConsoleApplication1
           
             try
             {
-                fileSelector.strfilename = @"C:\Users\Roshan\SkyDrive\user.csv";
-                    if (!File.Exists(@"C:\Users\Roshan\SkyDrive\user.csv"))
+                fileSelector.strfilename = Environment.ExpandEnvironmentVariables(@"C:\Users\%USERNAME%\SkyDrive\user.csv");
+                    if (!File.Exists(fileSelector.strfilename))
                     throw new FileNotFoundException();
             }
             catch (FileNotFoundException e)
@@ -28,6 +28,7 @@ namespace ConsoleApplication1
                 if(check == false)
                 {
                     Console.WriteLine("pleases enter file filter type");
+                    Console.WriteLine("user");
                     Filter.filter = (Console.ReadLine());
                     fileSelector.fileType = Filter.Cleaned();
                     check = true;
@@ -37,10 +38,15 @@ namespace ConsoleApplication1
             fileSelector.fileSelectors();
             }
   IEnumerable<user> users = ingest.userReads(fileSelector.filepath());
+
             try
             {
-                fileSelector.strfilename = @"C:\Users\Roshan\SkyDrive\location.csv";
-                if (!File.Exists(@"C:\Users\Roshan\SkyDrive\location.csv"))
+
+               String test =  Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "test.txt");
+
+
+                fileSelector.strfilename = Environment.ExpandEnvironmentVariables(@"C:\Users\%USERNAME%\SkyDrive\location.csv");
+                if (!File.Exists(fileSelector.strfilename))
                     throw new FileNotFoundException();
             }
             catch (FileNotFoundException e)
@@ -48,6 +54,7 @@ namespace ConsoleApplication1
                 if (check == false)
                 {
                     Console.WriteLine("pleases enter file filter type");
+                    Console.WriteLine("location");
                     Filter.filter = (Console.ReadLine());
                     fileSelector.fileType = Filter.Cleaned();
                     check = true;
@@ -75,13 +82,21 @@ namespace ConsoleApplication1
             
 
     */
-                         
-            var userAddress = users.Where(e => e.locationID == "1").Select(e =>e )  ;
+         
 
-            var query = users.Filter(u => u.locationID == "1");
-            foreach (var item in query )
+
+            var query = users.Filter(u => u.formalName.StartsWith("a");
+
+            foreach (var item in query)
             {
-            Console.WriteLine(item.userName + " " + );
+              
+            }
+
+
+
+                foreach (var item in query )
+            {
+            Console.WriteLine(item.userName +"    " + item.locationID);
             }
            
             Console.ReadLine();

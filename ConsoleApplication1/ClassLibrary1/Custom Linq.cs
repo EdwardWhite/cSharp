@@ -8,6 +8,7 @@ namespace ClassLibrary1
 {
     public static  class myLinq
     {
+
         public static IEnumerable<T> Filter<T>(this IEnumerable<T> source, Func<T,bool> predicate)
         {
             var result = new List<T>();
@@ -19,8 +20,6 @@ namespace ClassLibrary1
                     result.Add(item);
                 }
             }
-
-
 
             return result;
         }

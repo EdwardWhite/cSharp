@@ -20,10 +20,6 @@ namespace ConsoleApplication1
             Fileselector();
         }
 
-
-
-
-
         private static String filelocation()
         {
             return strfilename;

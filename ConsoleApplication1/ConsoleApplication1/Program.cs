@@ -19,7 +19,9 @@ namespace ConsoleApplication1
           
             try
             {
-                fileSelector.strfilename = Environment.ExpandEnvironmentVariables(@"C:\Users\%USERNAME%\SkyDrive\user.csv");
+                Console.WriteLine(  Environment.UserName );
+
+                fileSelector.strfilename = Environment.ExpandEnvironmentVariables(@"C:\Users\" + Environment.UserName + @"\SkyDrive\user.csv");
                     if (!File.Exists(fileSelector.strfilename))
                     throw new FileNotFoundException();
             }
@@ -45,7 +47,7 @@ namespace ConsoleApplication1
                String test =  Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "test.txt");
 
 
-                fileSelector.strfilename = Environment.ExpandEnvironmentVariables(@"C:\Users\%USERNAME%\SkyDrive\location.csv");
+                fileSelector.strfilename = Environment.ExpandEnvironmentVariables(@"C:\Users\" + Environment.UserName + @"\SkyDrive\location.csv");
                 if (!File.Exists(fileSelector.strfilename))
                     throw new FileNotFoundException();
             }
@@ -85,11 +87,11 @@ namespace ConsoleApplication1
          
 
 
-            var query = users.Filter(u => u.formalName.StartsWith("a");
+            var query = users.Filter(u => u.formalName.StartsWith("R"));
 
             foreach (var item in query)
             {
-              
+                Console.WriteLine(item.userName);
             }
 
 

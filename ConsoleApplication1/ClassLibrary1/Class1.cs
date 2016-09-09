@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace ClassLibrary
 {
     public class DataRecord
     {
@@ -41,7 +41,5 @@ namespace ClassLibrary1
         public String postCode { get; set; }
 
     }
-
-
 
 }

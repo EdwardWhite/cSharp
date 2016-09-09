@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Initial.cs" />
     <Compile Include="dataExgress.cs" />
     <Compile Include="DataIngest.cs" />
     <Compile Include="fileSelector.cs" />

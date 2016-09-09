@@ -1,14 +1,27 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary2
+
+
+namespace applicationlayer
 {
     class AppSettings
     {
-        public String filtertype = "csv";
-        
+        public static String[] Types = { "user", "Location" };
+
+
+        public static void appStart()
+        {
+           fileSelector.fileType = "csv";
+        fileSelector.switches = false;
+          
+        }
+
+       
+
     }
 }

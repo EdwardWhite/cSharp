@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ConsoleApplication1
+namespace DataLayer
 {
     public static class fileSelector
     {
-  
-        public static String fileType { get; set; }
-        public static String strfilename { get; set; }
+        public static bool switches { get; set; }
+        public static string fileType { get; set; }
+        public static string strfilename { get; set; }
 
 
-        public static String filepath()
+        public static string filepath()
         {
             return filelocation();
         }

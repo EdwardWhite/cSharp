@@ -23,7 +23,8 @@ namespace applicationLayer
             Initial.Load(AppSettings.Types[1]); 
             IEnumerable<Location> locations = ingest.locationReads(fileSelector.filepath());
 
-            BSLogic.queryStartsWith(users, "R");
+            IEnumerable<user> query = BSLogic.queryStartsWith(users, "R");
+            
             
 
         }

@@ -12,18 +12,19 @@ namespace Businesslogic
 {
    public class BSLogic
     {
-        public static void queryStartsWith (IEnumerable<user> users, String starts)
+        public static IEnumerable<user> queryStartsWith (IEnumerable<user> users, String starts)
         {
-
-            var query = users.Filter(u => u.formalName.StartsWith(starts));
-
-            foreach (var item in query)
-            {
-                Console.WriteLine(item.userName);
-            }
-            Console.ReadLine();  
+            return  users.Filter(u => u.formalName.StartsWith(starts));
+        }
+        public static IEnumerable<user> queryEndsWith(IEnumerable<user> users, String starts)
+        {
+            return users.Filter(u => u.formalName.EndsWith(starts));
         }
 
+        public static IEnumerable<user> locationFilter(IEnumerable<user> users, String starts)
+        {
+            return users.Filter(u => u.locationID.Equals(starts));
+        }
 
     }
 }

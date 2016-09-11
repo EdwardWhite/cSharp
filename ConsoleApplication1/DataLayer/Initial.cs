@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataLayer
 {
@@ -20,18 +17,38 @@ namespace DataLayer
             }
             catch (FileNotFoundException e)
             {
-                Console.WriteLine(e.GetType());
-                if (fileSelector.switches == false)
-                {
-                    Console.WriteLine("pleases enter file filter type");
-                    Filter.filter = (Console.ReadLine());
-                    fileSelector.fileType = Filter.Cleaned();
-                    fileSelector.switches = true;
+                TypeCast();
+             catchFilenotFound(Type);
+            }
+        }
 
-                }
-                Console.WriteLine("pleases Select " + Type + " file");
+        private static void TypeCast()
+        {
+
+            if (fileSelector.switches == false)
+            {
+                MessageBox.Show("Please Type in File Type", "Error File Filter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Filter.filter = (Console.ReadLine());
+                fileSelector.fileType = Filter.Cleaned();
+                fileSelector.switches = true;
+
+            }
+        }
+
+        public static void catchFilenotFound(string Type)
+        {
+            try
+            {
+
+                Console.WriteLine("Pleases Select " + Type + " file");
                 fileSelector.fileSelectors();
             }
+            catch (FileNotFoundException x)
+            {
+                catchFilenotFound(Type);
+            }
+
         }
     }
 }

@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using DataLayer;
+﻿using applicationlayer;
 using Businesslogic;
 using ClassLibrary;
-using applicationlayer;
-using System.Collections;
+using DataLayer;
+using System;
+using System.Collections.Generic;
 
 namespace applicationLayer
 {
 
     class applicationlayer
     {
+       
 
         [STAThread]
 
@@ -25,9 +23,11 @@ namespace applicationLayer
             Initial.Load(AppSettings.Types[1]); 
             IEnumerable<Location> locations = ingest.locationReads(fileSelector.filepath());
 
-            BSLogic.queryStartsWith(users, "A");
+            BSLogic.queryStartsWith(users, "R");
+            
 
         }
+
 
 
     }

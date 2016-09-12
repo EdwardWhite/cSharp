@@ -24,8 +24,13 @@ namespace applicationLayer
             IEnumerable<Location> locations = ingest.locationReads(fileSelector.filepath());
 
             IEnumerable<user> query = BSLogic.queryStartsWith(users, "R");
-            
-            
+
+            foreach(user item in query)
+            {
+                Console.WriteLine(item.formalName);
+            }
+
+            Console.ReadLine();
 
         }
 
